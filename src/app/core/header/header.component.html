@@ -1,8 +1,21 @@
-<mat-toolbar color="primary">
-  <span>Angular Material Navbar</span>
-  <button mat-button routerLink="/adopt-kittens">Adopt Kittens</button>
-  <button mat-button routerLink="/kitty-stories">Kitty Stories</button>
-  <button mat-button routerLink="/about-us">About Us</button>
-  <button mat-button routerLink="/blog">Blog</button>
-  <button mat-button routerLink="/contact">Contact</button>
+<mat-toolbar class="headerContainer">
+  <img src="assets/images/logo_dark.png" alt="logo header" />
+
+  <div id="pagesExtended">
+    <ng-container *ngFor="let page of pages">
+      <button mat-button (click)="navigateTo(page.link)">{{ page.label }}</button>
+    </ng-container>
+  </div>
+
+  <div id="pagesMenu">
+    <button mat-button-toggle class="hamburgerMenu" [matMenuTriggerFor]="menu" aria-label="Menu button">
+      <mat-icon>menu</mat-icon>
+    </button>
+
+    <mat-menu #menu="matMenu">
+      <ng-container *ngFor="let page of pages">
+        <button mat-menu-item (click)="navigateTo(page.link)">{{ page.label }}</button>
+      </ng-container>
+    </mat-menu>
+  </div>
 </mat-toolbar>
