@@ -27,11 +27,19 @@ body {
   background-color: #eff1f4;
 }
 
-p {
-  margin: 0;
-}
-
 app-root {
   display: block;
   height: 100%;
 }
+
+// Override default css
+p {
+  margin: 0;
+}
+
+button {
+  border: 0;
+  background-color: inherit;
+}
+
+

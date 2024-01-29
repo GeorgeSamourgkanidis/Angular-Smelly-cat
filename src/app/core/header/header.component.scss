@@ -1,4 +1,6 @@
 .headerContainer {
+  position: sticky;
+  top: 0;
   height: 48px;
   box-shadow: 0 1px 1px #a0a9ba;
   padding: 0 10vw;
@@ -9,18 +11,16 @@
   #pagesExtended {
     display: flex;
     gap: 2vw;
-    font-size: 14px;
-    font-weight: 500;
-    color: #555555;
+
+    .mat-mdc-button {
+      font-size: 14px;
+      font-weight: 500;
+      color: #555555;
+    }
   }
 
   #pagesMenu {
     display: none;
-
-    .hamburgerMenu {
-      border: 0;
-      background-color: inherit;
-    }
   }
 
   //On small screens I hide the extended pages and show the hamburger menu

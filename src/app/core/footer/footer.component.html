@@ -1,0 +1,27 @@
+<div class="footerContainer">
+  <div class="footerDetails">
+    <img src="assets/images/logo_light.png" alt="logo footer" />
+
+    <div id="extraOptions">
+      <ng-container *ngFor="let page of pages">
+        <button mat-button (click)="navigateTo(page.link)">{{ page.label }}</button>
+      </ng-container>
+    </div>
+
+    <div id="socialLinks">
+      <button mat-button>
+        <fa-icon [icon]="faDiscord"></fa-icon>
+      </button>
+
+      <button mat-button>
+        <fa-icon [icon]="faTwitter"></fa-icon>
+      </button>
+
+      <button mat-button>
+        <fa-icon [icon]="faInstagram"></fa-icon>
+      </button>
+    </div>
+  </div>
+
+  <span class="copyRightText">Copyright © SmellyCat 2023</span>
+</div>

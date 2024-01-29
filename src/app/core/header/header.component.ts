@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
@@ -42,5 +42,6 @@ export class HeaderComponent {
 
   navigateTo(link: string) {
     this.router.navigateByUrl(link);
+    window.scrollTo(0, 0)
   }
 }
