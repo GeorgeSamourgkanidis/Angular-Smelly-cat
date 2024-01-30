@@ -7,7 +7,7 @@ import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
   providedIn: 'root'
 })
 export class ContactEmailService {
-  sendContactFormEmail(data: ContactEmailData) {
+  async sendContactFormEmail(data: ContactEmailData) {
     const templateParams = {
       name: data.name,
       email: data.email,
@@ -16,14 +16,7 @@ export class ContactEmailService {
       address: data.address,
       message: data.message
     };
-    emailjs.init('Yu6aTsCCbmw_s1mKZ')
-    emailjs.send('service_sxjo4ax', 'template_ai2bzql', templateParams).then(
-      function (response) {
-        console.log('SUCCESS!', response.status, response.text);
-      },
-      function (err) {
-        console.log('FAILED...', err);
-      }
-    );
+    emailjs.init('Yu6aTsCCbmw_s1mKZ');
+    await emailjs.send('service_sxjo4ax', 'template_ai2bzql', templateParams);
   }
 }

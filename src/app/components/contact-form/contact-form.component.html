@@ -63,4 +63,8 @@
   </div>
 
   <button mat-raised-button class="submitButton" (click)="submitClicked()">Send!</button>
+
+  <ng-container *ngIf="showConfirmationDialog">
+    <confirmation-dialog title="Are you sure you want to submit?" submitText="Confirm" (cancelOrConfirm)="dialogResponse($event)"/>
+  </ng-container>
 </form>

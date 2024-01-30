@@ -6,11 +6,19 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { CommonModule } from '@angular/common';
 import { ContactEmailService } from '../../services/contact-email.service';
 import { ContactEmailData } from '../../models/contactEmailData';
+import { ConfirmationDialogComponent } from '../../core/confirmation-dialog/confirmation-dialog.component';
 
 @Component({
   selector: 'contact-form',
   standalone: true,
-  imports: [InputWithLabelComponent, CommonModule, MatCheckboxModule, ReactiveFormsModule, MatButtonModule],
+  imports: [
+    InputWithLabelComponent,
+    CommonModule,
+    MatCheckboxModule,
+    ReactiveFormsModule,
+    MatButtonModule,
+    ConfirmationDialogComponent
+  ],
   templateUrl: './contact-form.component.html',
   styleUrl: './contact-form.component.scss'
 })
@@ -24,15 +32,24 @@ export class ContactFormComponent {
     message: new FormControl(''),
     agreement: new FormControl(false, [Validators.requiredTrue])
   });
+  showConfirmationDialog: boolean = false;
 
   constructor(private contactEmailService: ContactEmailService) {}
 
   submitClicked() {
     this.validateAllFormFields(this.contactForm);
     if (this.contactForm.valid) {
-      const data = this.contactForm.getRawValue() as ContactEmailData;
-      this.contactEmailService.sendContactFormEmail(data);
+      this.showConfirmationDialog = true;
     }
+  }
+
+  async dialogResponse(confirmed: boolean) {
+    if (confirmed) {
+      const data = this.contactForm.getRawValue() as ContactEmailData;
+      await this.contactEmailService.sendContactFormEmail(data);
+    }
+
+    this.showConfirmationDialog = false;
   }
 
   validateAllFormFields(formGroup: FormGroup) {

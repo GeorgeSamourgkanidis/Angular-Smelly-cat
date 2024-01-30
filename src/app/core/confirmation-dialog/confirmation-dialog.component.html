@@ -1,0 +1,13 @@
+<div class="confirmation-dialog">
+  <h2>{{ title }}</h2>
+
+  <div class="buttonsContainer">
+    <button mat-raised-button class="cancelButton" (click)="cancel()">Cancel</button>
+    <button mat-raised-button class="confirmButton" (click)="confirm()">
+      <div class="buttonText">
+        <span>{{ submitText }}</span>
+        <mat-spinner color="primary" diameter="20" *ngIf="showLoading"></mat-spinner>
+      </div>
+    </button>
+  </div>
+</div>
