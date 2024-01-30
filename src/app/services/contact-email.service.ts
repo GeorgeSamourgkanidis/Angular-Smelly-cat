@@ -18,5 +18,6 @@ export class ContactEmailService {
     };
     emailjs.init('Yu6aTsCCbmw_s1mKZ');
     await emailjs.send('service_sxjo4ax', 'template_ai2bzql', templateParams);
+    // could have then and catch
   }
 }

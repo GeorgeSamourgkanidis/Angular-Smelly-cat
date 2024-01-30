@@ -1,3 +1,4 @@
+//The header height is 48px. The goal is to have header+content as fullscreen and once you scroll you can see the footer.
 .pagesDiv {
   min-height: calc(100vh - 48px);
 }

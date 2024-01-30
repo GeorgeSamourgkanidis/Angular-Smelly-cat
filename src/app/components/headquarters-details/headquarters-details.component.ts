@@ -10,6 +10,7 @@ import { GoogleMap, MapMarker } from '@angular/google-maps';
   styleUrl: './headquarters-details.component.scss'
 })
 export class HeadquartersDetailsComponent {
+  //Long lat of the given location
   center: google.maps.LatLngLiteral = { lat: 40.63452198366542, lng: 22.943103897478856 };
   zoom = 16;
 }

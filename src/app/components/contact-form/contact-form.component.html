@@ -20,23 +20,19 @@
   <div class="divider"></div>
 
   <div class="cityPostalContainer">
-    <!-- <div class="w-half"> -->
-      <input-with-label
-        title="City"
-        [isVerticalTitle]="true"
-        placeholder="ex. Thessaloniki"
-        inputType="text"
-        [control]="contactForm.controls.city" />
-    <!-- </div> -->
+    <input-with-label
+      title="City"
+      [isVerticalTitle]="true"
+      placeholder="ex. Thessaloniki"
+      inputType="text"
+      [control]="contactForm.controls.city" />
 
-    <!-- <div class="w-half"> -->
-      <input-with-label
-        title="Postal Code"
-        [isVerticalTitle]="true"
-        placeholder="ex. 54658"
-        inputType="number"
-        [control]="contactForm.controls.postalCode" />
-    <!-- </div> -->
+    <input-with-label
+      title="Postal Code"
+      [isVerticalTitle]="true"
+      placeholder="ex. 54658"
+      inputType="number"
+      [control]="contactForm.controls.postalCode" />
   </div>
 
   <input-with-label
@@ -65,6 +61,9 @@
   <button mat-raised-button class="submitButton" (click)="submitClicked()">Send!</button>
 
   <ng-container *ngIf="showConfirmationDialog">
-    <confirmation-dialog title="Are you sure you want to submit?" submitText="Confirm" (cancelOrConfirm)="dialogResponse($event)"/>
+    <confirmation-dialog
+      title="Are you sure you want to submit?"
+      submitText="Confirm"
+      (cancelOrConfirm)="dialogResponse($event)" />
   </ng-container>
 </form>

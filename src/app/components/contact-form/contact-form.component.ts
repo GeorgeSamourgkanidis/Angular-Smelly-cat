@@ -53,6 +53,7 @@ export class ContactFormComponent {
   }
 
   validateAllFormFields(formGroup: FormGroup) {
+    //markAsTouched every single formControl in order to validate them
     Object.keys(formGroup.controls).forEach(field => {
       const control = formGroup.get(field);
       control?.markAsTouched({ onlySelf: true });
