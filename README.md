@@ -9,3 +9,4 @@ This is a "Contact Us" page demonstration. The default route redirects to the "/
 
 ## Notes
 The public keys are visible for now in order to show the page. I could add global scss variables and customize the angular theme. Also when I send emails I could check for errors.
+Experimented with new Angular standalone components, that's why you won't see any modules. Didn't have a change to showcase lifecycle onInit, onChange, onDestroy etc, or directives/pipes or ngrx, subscriptions rxjs.
