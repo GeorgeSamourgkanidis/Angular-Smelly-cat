@@ -1,0 +1,14 @@
+<div class="inputContainer" [ngClass]="{ verticalTitle: isVerticalTitle }">
+  <label [for]="!isTextArea ? 'input' : 'textArea'">{{ title }}</label>
+  <ng-container *ngIf="!isTextArea; then inputContent; else textAreaContent"></ng-container>
+</div>
+<div *ngIf="control.invalid && control.touched">
+ <span class="errorMessage">This field is required.</span>
+</div>
+<ng-template #inputContent>
+  <input [type]="inputType" id="input" [placeholder]="placeholder" [formControl]="control" />
+</ng-template>
+
+<ng-template #textAreaContent>
+  <textarea id="textArea" [placeholder]="placeholder" rows="10" [formControl]="control"></textarea>
+</ng-template>

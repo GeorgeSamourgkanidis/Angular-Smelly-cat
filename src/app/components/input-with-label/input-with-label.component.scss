@@ -1,0 +1,40 @@
+.inputContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+
+  label {
+    font-weight: bold;
+  }
+
+  textarea {
+    resize: none;
+  }
+
+  input,
+  textarea {
+    width: 75%;
+    padding: 10px;
+    border: 1px solid #a0a9ba;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  ::placeholder {
+    color: #a0a9ba;
+  }
+
+  @media (max-width: 576px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.verticalTitle {
+  flex-direction: column;
+  align-items: baseline;
+}
+
+.errorMessage {
+    color: red;
+}
