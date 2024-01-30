@@ -1,43 +1,24 @@
-.contantContainer {
+.contactContainer {
   padding: 5vh 10vw;
+  width: calc(100% - 20vw);
   display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5vw;
 
-  .title {
-    font-size: 3rem;
-    font-weight: 600;
+  .form {
+    width: calc(100% - 5vw - 600px);
+    min-width: 400px;
   }
 
-  .subtitle {
-    font-size: 1.5rem;
-    font-weight: 500;
-  }
-
-  .divider {
-    height: 2px;
-    background-color: #d8d8d8;
-    margin: 0.5rem 0;
-  }
-
-  .cityPostalContainer {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-  }
-
-  .agreementCheckbox {
-    .agreementLabel {
-      color: #555555;
+  @media (max-width: 1280px) {
+    .form {
+      width: 100%;
+      min-width: unset;
     }
-  }
 
-  .submitButton {
-    width: fit-content;
-    background-color: #ef7878;
-    color: white;
-    padding: 2rem 4rem;
-    font-size: 1.5rem;
-    font-weight: 500;
+    .map {
+      width: 100%;
+    }
   }
 }

@@ -1,0 +1,66 @@
+<form class="contantFormContainer" [formGroup]="contactForm">
+  <p class="title">Contact us</p>
+
+  <p class="subtitle">
+    We are all cat persons, so if you got any question, drop it below and we will contact you back!
+  </p>
+
+  <input-with-label
+    title="Your Full Name"
+    placeholder="Type your name"
+    inputType="text"
+    [control]="contactForm.controls.name" />
+
+  <input-with-label
+    title="Your Email"
+    placeholder="Type your email"
+    inputType="email"
+    [control]="contactForm.controls.email" />
+
+  <div class="divider"></div>
+
+  <div class="cityPostalContainer">
+    <!-- <div class="w-half"> -->
+      <input-with-label
+        title="City"
+        [isVerticalTitle]="true"
+        placeholder="ex. Thessaloniki"
+        inputType="text"
+        [control]="contactForm.controls.city" />
+    <!-- </div> -->
+
+    <!-- <div class="w-half"> -->
+      <input-with-label
+        title="Postal Code"
+        [isVerticalTitle]="true"
+        placeholder="ex. 54658"
+        inputType="number"
+        [control]="contactForm.controls.postalCode" />
+    <!-- </div> -->
+  </div>
+
+  <input-with-label
+    title="Address"
+    [isVerticalTitle]="true"
+    placeholder="ex. Thessaloniki"
+    inputType="text"
+    [control]="contactForm.controls.address" />
+
+  <input-with-label
+    [isTextArea]="true"
+    title="Your Message"
+    [isVerticalTitle]="true"
+    placeholder="Type your message"
+    [control]="contactForm.controls.message" />
+
+  <div>
+    <mat-checkbox color="primary" class="agreementCheckbox" formControlName="agreement"
+      ><span class="agreementLabel">I agree with the Terms & Conditions</span>
+    </mat-checkbox>
+    <div *ngIf="contactForm.controls.agreement.invalid && contactForm.controls.agreement.touched">
+      <span class="errorMessage">You must agree to the Terms & Conditions.</span>
+    </div>
+  </div>
+
+  <button mat-raised-button class="submitButton" (click)="submitClicked()">Send!</button>
+</form>

@@ -3,7 +3,8 @@
   <ng-container *ngIf="!isTextArea; then inputContent; else textAreaContent"></ng-container>
 </div>
 <div *ngIf="control.invalid && control.touched">
- <span class="errorMessage">This field is required.</span>
+  <span *ngIf="!control.value" class="errorMessage">This field is required.</span>
+  <span *ngIf="control.value" class="errorMessage">This field is invalid.</span>
 </div>
 <ng-template #inputContent>
   <input [type]="inputType" id="input" [placeholder]="placeholder" [formControl]="control" />

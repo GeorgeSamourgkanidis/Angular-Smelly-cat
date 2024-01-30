@@ -1,0 +1,17 @@
+<div class="headquartersDetailsContainer">
+  <google-map  [center]="center" [zoom]="zoom">
+    <map-marker [position]="center"></map-marker>
+  </google-map>
+
+  <div [ngClass]="['details', 'columnAlignEnd']">
+    <p class="title">Headquarters</p>
+    <div class="columnAlignEnd">
+      <p>Aristotelous 16, 54658</p>
+      <p>Thessaloniki, Greece</p>
+    </div>
+    <div class="columnAlignEnd">
+      <p>+30 231 129 0998</p>
+      <p>hey&#64;smellycat.gr</p>
+    </div>
+  </div>
+</div>

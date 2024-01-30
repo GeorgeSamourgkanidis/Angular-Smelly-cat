@@ -2,7 +2,7 @@ export interface ContactEmailData {
   name: string;
   email: string;
   city: string;
-  postalCode: number;
+  postalCode: number | null;
   address: string;
   message: string;
 }
