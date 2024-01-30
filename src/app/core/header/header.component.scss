@@ -1,4 +1,6 @@
 .headerContainer {
+  /// For some reason google maps was over the header
+  z-index: 999;
   position: sticky;
   top: 0;
   height: 48px;
